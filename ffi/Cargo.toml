@@ -1,0 +1,19 @@
+[package]
+name = "ffi"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[lib]
+crate-type = ["staticlib"]
+
+[profile.release]
+opt-level = "z"
+debug = 0
+strip = "debuginfo"
+overflow-checks = false
+lto = "thin"
+
+[dependencies.oxipng]
+version = "6.0.1"
+default-features = false
